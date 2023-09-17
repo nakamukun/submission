@@ -20,8 +20,13 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'college',
+        'college',
+        'factory',
+        'department',
         'password',
-    ];
+        
+        ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -41,4 +46,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+     public function reaction()
+     {
+         return $this->belongsTo(Reaction::class);
+     }
+     
+     public function chat_messege()
+     {
+         return $this->HasMany(Chat_messege::class);
+     }
+     
+     public function chat_room()
+     {
+         return $this->HasMany(Chat_room::class);
+     }
+     
+
+     
 }
