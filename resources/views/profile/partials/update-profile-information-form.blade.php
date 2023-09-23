@@ -13,18 +13,23 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+　　<form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
 
+    <div>
+           <x-picture-input />
+           <x-input-error class="mt-2" :messages="$errors->get('picture')" />
+       </div>
+
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" :value="__('名前')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
-
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
+        
+         <div>
+            <x-input-label for="email" :value="__('メールアドレス')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
@@ -46,6 +51,63 @@
                 </div>
             @endif
         </div>
+        
+        <div>
+            <x-input-label for="age" :value="__('年齢')" />
+            <x-text-input id="age" name="age" type="text" class="mt-1 block w-full" :value="old('age', $user->age)" autocomplete="age" />
+            <x-input-error class="mt-2" :messages="$errors->get('age')" />
+        </div>
+        
+         <div>
+            <x-input-label for="sex" :value="__('性別')" />
+            <x-text-input id="sex" name="sex" type="text" class="mt-1 block w-full" :value="old('sex', $user->sex)" autocomplete="sex" />
+            <x-input-error class="mt-2" :messages="$errors->get('sex')" />
+        </div>
+        
+          <div>
+            <x-input-label for="bio" :value="__('自己紹介文')" />
+            <x-text-input id="bio" name="bio" type="text" class="mt-1 block w-full" :value="old('bio', $user->bio)" autocomplete="bio" />
+            <x-input-error class="mt-2" :messages="$errors->get('bio')" />
+        </div>
+        
+        <div>
+            <x-input-label for="hobby" :value="__('趣味')" />
+            <x-text-input id="hobby" name="hobby" type="text" class="mt-1 block w-full" :value="old('hobby', $user->hobby)" autocomplete="hobby" />
+            <x-input-error class="mt-2" :messages="$errors->get('hobby')" />
+        </div>
+        
+        <div>
+            <x-input-label for="height" :value="__('身長')" />
+            <x-text-input id="height" name="height" type="text" class="mt-1 block w-full" :value="old('height', $user->height)" autocomplete="height" />
+            <x-input-error class="mt-2" :messages="$errors->get('height')" />
+        </div>
+       
+        <div>
+            <x-input-label for="location" :value="__('居住地')" />
+            <x-text-input id="location" name="location" type="text" class="mt-1 block w-full" :value="old('location', $user->location)" autocomplete="location" />
+            <x-input-error class="mt-2" :messages="$errors->get('location')" />
+        </div>
+        
+        <div>
+            <x-input-label for="college" :value="__('大学')" />
+            <x-text-input id="college" name="college" type="text" class="mt-1 block w-full" :value="old('college', $user->college)" autocomplete="college" />
+            <x-input-error class="mt-2" :messages="$errors->get('college')" />
+        </div>
+        
+        <div>
+            <x-input-label for="factory" :value="__('学部')" />
+            <x-text-input id="factory" name="factory" type="text" class="mt-1 block w-full" :value="old('factory', $user->factory)" autocomplete="factory" />
+            <x-input-error class="mt-2" :messages="$errors->get('factory')" />
+        </div>
+        
+         <div>
+            <x-input-label for="department" :value="__('学科')" />
+            <x-text-input id="department" name="department" type="text" class="mt-1 block w-full" :value="old('department', $user->department)" autocomplete="department" />
+            <x-input-error class="mt-2" :messages="$errors->get('department')" />
+        </div>
+
+        
+       
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
