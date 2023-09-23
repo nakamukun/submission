@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Post;
@@ -15,40 +16,74 @@ class UserController extends Controller
         
       
                     
-          $users = User::paginate(20);
-        
-       $search = $request->input('search');
-        
-         $query = User::query();
-         
-         $params = $request->query();
-         
+          $users = User::paginate(10);
        
+          $college = $request->input('college',);
+          $factory = $request->input('factory');
+          $department = $request->input("department");
+       
+          $query = User::query();
+         
+        //   $params = $request->query();
+         
+        if ($college) {
 
-        
-        
-            if ($search) {
+            $query->where('college', 'like', "%{$college}%");
+       
+        }   
             
-             $spaceConversion = mb_convert_kana($search, 's');
+        if ($factory) {
             
-            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
-             
-              foreach($wordArraySearched as $value) {
-                $query->where('name', 'like', '%'.$value.'%');
-            }
-                
-                $users = $query->paginate(20);
+          
+            $query->where('factory', 'like', "%{$factory}%");
         }
         
+         if ($department) {
+   
+            $query->where('departmnet', 'like', "%{$department}%");
+
+        } 
+     
+          $users = $query->paginate(10);
         
-          return view('users.index')
+            return view('users/index')
             ->with([
                 'users' => $users,
-                'search' => $search,
+                'college' => $college,
+                'factory' => $factory,
+                'department' =>$department,
+                
             ]);
+            
+           
+          
+    }    
+    
+    
+    public function show()
+    {
+        return view('users/show');
     }
     
-  
-  
-      
+     public function create()
+    {
+        $authUser = Auth::user();
+        return view('users/create', compact('authUser'));
+    }
+    
+    public function update(UserRequest $request)
+    {
+         $authUser = Auth::user(); 
+         
+         $authUser->name = $request->input('name'); 
+         
+         $uploadFile = $request->file('image'); if (!empty($uploadFile)) { $thumbnailName = $request->file('image')->hashName(); 
+         
+         $request->file('image')->storeAs('public/profile_images', $thumbnailName);
+         $authUser->image = $thumbnailName; } $authUser->save();
+         
+         
+         return redirect('user/create')->with('flash_message', '変更しました');
+    }
+    
 }

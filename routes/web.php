@@ -25,7 +25,10 @@ Route::get('/dashboard', function () {
 
 Route::controller(UserController::class)->middleware(['auth'])->group(function(){
     Route::get('/', 'index')->name('users/index');
-    Route::get('/posts','show')->name('users/show');
+    Route::get('/users','show')->name('users/show');
+    Route::get('/create' , 'create')->name('users/create');
+    Route::post('/update', 'UserController@update')->name('user.update');
+    
 });
 
 Route::middleware('auth')->group(function () {

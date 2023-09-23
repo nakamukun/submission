@@ -16,8 +16,16 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     
-                     <x-nav-link :href="route('users/index')" :active="request()->routeIs('users/index')">
-                        {{ __('index') }}
+                     <x-nav-link :href="route('users/index')" :active="request()->routeIs('index')">
+                        {{ __('さがす') }}
+                    </x-nav-link>
+                    
+                    <x-nav-link :href="route('users/show')" :active="request()->routeIs('show')">
+                        {{ __('いいね') }}
+                    </x-nav-link>
+                    
+                     <x-nav-link :href="route('users/create')" :active="request()->routeIs('create')">
+                        {{ __('マイページ') }}
                     </x-nav-link>
                 </div>
             </div>

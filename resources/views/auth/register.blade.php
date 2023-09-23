@@ -16,6 +16,25 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
         
+        <div>
+            <x-input-label for="college" :value="__('大学名')" />
+            <x-text-input id="college" class="block mt-1 w-full" type="text" name="college" :value="old('college')" autocomplete="college" />
+            <x-input-error :messages="$errors->get('college')" class="mt-2" />
+        </div>
+        
+          <div>
+            <x-input-label for="factory" :value="__('学部名')" />
+            <x-text-input id="factory" class="block mt-1 w-full" type="text" name="factory" :value="old('factory')" autocomplete="factory" />
+            <x-input-error :messages="$errors->get('factory')" class="mt-2" />
+        </div>
+        
+          <div>
+            <x-input-label for="department" :value="__('学科名')" />
+            <x-text-input id="department" class="block mt-1 w-full" type="text" name="department" :value="old('department')" autocomplete="department" />
+            <x-input-error :messages="$errors->get('department')" class="mt-2" />
+        </div>
+        
+         
 
         <!-- Password -->
         <div class="mt-4">
