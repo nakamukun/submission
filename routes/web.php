@@ -27,8 +27,9 @@ Route::controller(UserController::class)->middleware(['auth'])->group(function()
     Route::get('/', 'index')->name('users/index');
     Route::get('/users','show')->name('users/show');
     Route::get('/create' , 'create')->name('users/create');
-    Route::post('/update', 'UserController@update')->name('user.update');
-    
+    Route::post('/posts', 'store')->name('store');
+    Route::get('/posts/{post}', 'show')->name('show');
+   
 });
 
 Route::middleware('auth')->group(function () {

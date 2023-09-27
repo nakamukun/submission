@@ -21,15 +21,14 @@ return new class extends Migration
             $table->string('college' , 30)->nullable();
             $table->string('factory', 30)->nullable();
             $table->string('department' , 30)->nullable();
+            $table->string('image_url')->nullable();
             $table->string('password');
-            $table->string('profile_photo_path')->nullable();
             $table->string("age" , 10)->nullable();
             $table->string('bio' , 300)->nullable();
             $table->string('hobby',300)->nullable();
             $table->string('height',100)->nullable();
             $table->string('sex' , 10)->nullable();
             $table->string('location', 10)->nullable();
-            $table->string('img_path')->nullable()->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

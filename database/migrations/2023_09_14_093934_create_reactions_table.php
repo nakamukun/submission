@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reactions', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('form_user')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('to_user')->constrained('users')->cascadeOnDelete();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('form_user_id')->constrained('users')->cascadeOnDelete();
+            $table->unsignedBigInteger('to_user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Cloudinary;
 
 class ProfileController extends Controller
 {
@@ -24,16 +25,20 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+   public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
-
+        $input = $request->validated();
+        
+        if($request->file('image_url')){
+            $image_url = Cloudinary::upload($request->file('image_url')->getRealPath())->getSecurePath();
+            $input['image_url'] = $image_url;
+          
+        }
+        $request->user()->fill($input);
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
-
         $request->user()->save();
-
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
@@ -57,4 +62,6 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+    
+    
 }
