@@ -31,6 +31,8 @@ class User extends Authenticatable
         'department',
         'password',
         'profile_photo_path',
+        'image_url',
+        'profile_image',
         
         ];
 

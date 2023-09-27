@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Post;
 
 
+
 class UserController extends Controller
 {
     public function index(Request $request)
@@ -40,11 +41,12 @@ class UserController extends Controller
         
          if ($department) {
    
-            $query->where('departmnet', 'like', "%{$department}%");
+            $query->where('department', 'like', "%{$department}%");
 
         } 
      
           $users = $query->paginate(10);
+        
         
             return view('users/index')
             ->with([
@@ -86,4 +88,13 @@ class UserController extends Controller
          return redirect('user/create')->with('flash_message', '変更しました');
     }
     
+    public function store(Request $request, Post $post)
+    {
+       
+        
+         
+        $input = $request['post'];
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->id);
+    }
 }

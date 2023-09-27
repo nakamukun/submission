@@ -18,8 +18,10 @@
       </form>
       
       @foreach($users as $user)
+        
         <a href="{{ route('users/show' , ['user_id' => $user->id]) }}" class="block">
          {{$user->college}}
+         
          </a>
         
          @endforeach
