@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReactionController;
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\MatchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -25,11 +26,15 @@ Route::get('/dashboard', function () {
 
 Route::controller(UserController::class)->middleware(['auth'])->group(function(){
     Route::get('/', 'index')->name('users/index');
-    Route::get('/users','show')->name('users/show');
     Route::get('/create' , 'create')->name('users/create');
-    Route::post('/posts', 'store')->name('store');
-    Route::get('/posts/{post}', 'show')->name('show');
-   
+    Route::get('/users/{user}','show')->name('show');
+    // Route::post("/reaction",'store')->name("reaction/store");
+});
+
+Route::group(['middleware' => ['auth']], function(){
+  Route::post('/reaction', [reactionController::class,'store'])->name('reactions/store');
+  Route::get('/chat', [chatController::class,'chat'])->name('users/chat');
+  Route::get('/match',[matchController::class, 'match'])->name('users/match');
 });
 
 Route::middleware('auth')->group(function () {

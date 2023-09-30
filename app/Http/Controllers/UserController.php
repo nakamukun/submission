@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Post;
+use App\Models\Reaction;
 
 
 
@@ -15,9 +15,9 @@ class UserController extends Controller
     public function index(Request $request)
     {
         
-      
+        $reactionUserId = Reaction::where('from_user_id', \Auth::user()->id)->get()->pluck('to_user_id');
                     
-          $users = User::paginate(10);
+          
        
           $college = $request->input('college',);
           $factory = $request->input('factory');
@@ -45,7 +45,10 @@ class UserController extends Controller
 
         } 
      
-          $users = $query->paginate(10);
+            
+        //   $users = User::where('id', '<>', \Auth::user()->id)-get();
+        //   $users = $query->get();
+        $users= $query->where('id', '<>', \Auth::user()->id)->paginate();
         
         
             return view('users/index')
@@ -62,9 +65,14 @@ class UserController extends Controller
     }    
     
     
-    public function show()
+    public function show( User $user )
     {
-        return view('users/show');
+        
+        
+        
+        $users = User::paginate(10);
+        return view('users/show')->with(['user' => $user]);
+        
     }
     
      public function create()

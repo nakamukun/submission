@@ -5,7 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class reactions extends Model
+class Reaction extends Model
 {
     use HasFactory;
+    
+     protected $fillable =[
+       'to_user_id',
+       'from_user_id',
+       'status',
+        
+        ];
 }
