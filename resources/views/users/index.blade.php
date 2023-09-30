@@ -17,18 +17,13 @@
               </div>
       </form>
       
-      @foreach($users as $user)
+    @foreach($users as $user)
         
-        <a href="{{ route('users/show' , ['user_id' => $user->id]) }}" class="block">
-         {{$user->college}}
-         
-         </a>
-        
+        <p>
+          <a href="/users/{{ $user->id }}" class="block">大学:{{$user->college}}</a>
+        </p>
          @endforeach
+
       
-      
-        
-        
-     
     </body>
   </x-app-layout>
