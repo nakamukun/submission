@@ -44,10 +44,7 @@ class UserController extends Controller
             $query->where('department', 'like', "%{$department}%");
 
         } 
-     
-            
-        //   $users = User::where('id', '<>', \Auth::user()->id)-get();
-        //   $users = $query->get();
+    
         $users= $query->where('id', '<>', \Auth::user()->id)->paginate();
         
         

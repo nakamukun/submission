@@ -28,13 +28,13 @@ Route::controller(UserController::class)->middleware(['auth'])->group(function()
     Route::get('/', 'index')->name('users/index');
     Route::get('/create' , 'create')->name('users/create');
     Route::get('/users/{user}','show')->name('show');
-    // Route::post("/reaction",'store')->name("reaction/store");
 });
 
 Route::group(['middleware' => ['auth']], function(){
   Route::post('/reaction', [reactionController::class,'store'])->name('reactions/store');
-  Route::get('/chat', [chatController::class,'chat'])->name('users/chat');
   Route::get('/match',[matchController::class, 'match'])->name('users/match');
+  Route::get('/chat', [chatController::class,'chat'])->name('users/chat');
+ 
 });
 
 Route::middleware('auth')->group(function () {
