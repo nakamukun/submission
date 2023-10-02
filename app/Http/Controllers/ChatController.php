@@ -9,6 +9,8 @@ class ChatController extends Controller
 {
     public function chat()
     {
-        return view('users/chat');
+        return view('users/chat')->with([
+            
+            ]);
     }
 }

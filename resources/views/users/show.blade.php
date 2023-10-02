@@ -13,7 +13,7 @@
      
        @if($user->image_url)
             <div>
-                <img src="{{ $user->image_url }}" alt="画像が読み込めません。"/>
+                <img src="{{ $user->image_url }}" alt="画像が読み込めません。"style="height:300px ;width:300px ;object-fit: cover;"/>
             </div>
         @endif
 

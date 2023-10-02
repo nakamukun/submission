@@ -20,7 +20,14 @@
     @foreach($users as $user)
         
         <p>
-          <a href="/users/{{ $user->id }}" class="block">大学:{{$user->college}}</a>
+          <a href="/users/{{ $user->id }}" class="block">
+             @if($user->image_url)
+              <div>
+                  <img src="{{ $user->image_url }}" alt="画像が読み込めません。" style="height:300px ;width:300px ;object-fit: cover;"/>
+              </div>
+             @endif
+             大学:{{$user->college}}
+           </a>
         </p>
          @endforeach
 
