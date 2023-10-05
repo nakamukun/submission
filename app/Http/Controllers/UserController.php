@@ -15,8 +15,8 @@ class UserController extends Controller
     public function index(Request $request)
     {
         
-        $reactionUserId = Reaction::where('from_user_id', \Auth::user()->id)->get()->pluck('to_user_id');
-                    
+        $reactionUserId = Reaction::where('like_id', \Auth::user()->id)->get()->pluck('liked_id');
+                
           
        
           $college = $request->input('college',);
@@ -63,7 +63,9 @@ class UserController extends Controller
     
     
     public function show( User $user )
-    {
+    {   
+        
+        $reactionUserId = Reaction::where('like_id', \Auth::user()->id)->get()->pluck('liked_id');
         
         
         

@@ -71,6 +71,15 @@ class User extends Authenticatable
          return $this->HasMany(Chat_room::class);
      }
      
+       public function likeUser()
+        {
+          return $this->belongsToMany('App\Models\User', 'reaction', 'like_id', 'liked_id');
+        }
+        
+         public function likedUser()
+        {
+         return $this->belongsToMany('App\Models\User', 'reaction',  'liked_id','like_id');
+        }
 
      
 }

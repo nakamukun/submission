@@ -2,22 +2,29 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
+use App\Models\User;
 
-class Reaction extends Model
+
+class Reaction extends Pivot
 {
-    use HasFactory;
-    
      protected $fillable =[
-       'to_user_id',
-       'from_user_id',
+       'like_id',
+       'liked_id',
        'status',
-        
-        ];
-        
-        public function toUser()
-        {
-          return $this->belongsTo('App\Models\User','to_user_id','id');
-        }
+       ];
+
+    protected $table = 'reactions';
+    
+    public function liked()
+    {
+        return $this->belongsTo('App\Models\User', 'liked_id','id');
+    }
+    
+    public function like()
+    {
+        return $this->belongsTo('App\Models\User', 'like_id','id');
+    }
+
 }

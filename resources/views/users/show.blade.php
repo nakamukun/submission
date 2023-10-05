@@ -29,7 +29,7 @@
          </div>
          <form action="{{route('reactions/store')}}" method="POST">
          @csrf
-         <input type="hidden" name="to_user_id" value="{{ $user->id}}">
+         <input type="hidden" name="liked_id" value="{{ $user->id}}">
          <input type="hidden" name="status" value="1">
          <button class="yes" type="submit">
             　いいね
@@ -37,7 +37,7 @@
          </form>
          
       
-            
+          <a href='/'>戻る</a>  
      
 
       

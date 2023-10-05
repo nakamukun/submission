@@ -34,7 +34,7 @@ Route::group(['middleware' => ['auth']], function(){
   Route::post('/reaction', [reactionController::class,'store'])->name('reactions/store');
   Route::get('/match',[matchController::class, 'match'])->name('users/match');
   Route::get('/chat', [chatController::class,'chat'])->name('users/chat');
- 
+  Route::get('/chatroom',[chatroomController::class,'chatroom'])->name('users/chatroom');
 });
 
 Route::middleware('auth')->group(function () {

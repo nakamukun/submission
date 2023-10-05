@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('reactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('from_user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('to_user_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('like_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('liked_id')->constrained('users')->cascadeOnDelete();
             $table->boolean('status');
             $table->timestamps();
         });

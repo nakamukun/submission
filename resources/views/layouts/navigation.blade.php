@@ -23,8 +23,7 @@
                      <x-nav-link :href="route('users/match')" :active="request()->routeIs('match')">
                         {{ __('いいね') }}
                     </x-nav-link>
-                    
-                     
+                
                      <x-nav-link :href="route('users/chat')" :active="request()->routeIs('chat')">
                         {{ __('トーク') }}
                     </x-nav-link>
