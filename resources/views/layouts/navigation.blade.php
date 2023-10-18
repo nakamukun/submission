@@ -28,7 +28,7 @@
                         {{ __('トーク') }}
                     </x-nav-link>
                     
-                     <x-nav-link :href="route('users/create')" :active="request()->routeIs('create')">
+                     <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('edit')">
                         {{ __('マイページ') }}
                     </x-nav-link>
                 </div>

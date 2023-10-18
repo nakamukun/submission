@@ -5,17 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class chat_rooms extends Model
+class Chat_room extends Model
 {
     use HasFactory;
     
-    public function chat_messege()
+    protected $fillable =[
+        'matching_id',
+        ];
+        
+    public $timestamps = true;
+    
+    const UPDATED_AT = null;
+    
+    public function matching()
     {
-        return $this->HasMany(Chat_messege::class);
+          return $this->belongsTo(Matching::class);
     }
     
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+
 }

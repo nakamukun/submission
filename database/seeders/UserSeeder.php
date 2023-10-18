@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
                 'name' => 'かか',
                 'email' => 'a@ccc',
-                'image_url' =>'ダウンロード.jpg',
+                'image_url' =>' https://res.cloudinary.com/dkqyurf1r/image/upload/v1697613403/p2otaxqmeuw16eyoiyus.png',
                 'age' => '21歳',
                 'sex' =>'女',
                 'bio' => '初めまして！!',
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
                 'name' => 'そそ',
                 'email' => 'a@aaa',
-                'image_url' =>'ダウンロード.jpg',
+                'image_url' =>' https://res.cloudinary.com/dkqyurf1r/image/upload/v1697613403/p2otaxqmeuw16eyoiyus.png',
                 'age' => '18歳',
                 'sex' =>'男',
                 'bio' => 'よろしく！',

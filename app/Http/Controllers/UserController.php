@@ -45,7 +45,7 @@ class UserController extends Controller
 
         } 
     
-        $users= $query->where('id', '<>', \Auth::user()->id)->paginate();
+        $users= $query->where('id', '<>', \Auth::user()->id)->whereNotIn('id', $reactionUserId)->paginate();
         
         
             return view('users/index')
@@ -53,8 +53,7 @@ class UserController extends Controller
                 'users' => $users,
                 'college' => $college,
                 'factory' => $factory,
-                'department' =>$department,
-                
+                'department' =>$department,    
             ]);
             
            

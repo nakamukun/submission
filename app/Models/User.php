@@ -61,14 +61,14 @@ class User extends Authenticatable
          return $this->belongsTo(Reaction::class);
      }
      
-     public function chat_messege()
+     public function message()
      {
-         return $this->HasMany(Chat_messege::class);
+         return $this->hasMany(Chat_message::class);
      }
      
-     public function chat_room()
+     public function matching()
      {
-         return $this->HasMany(Chat_room::class);
+         return $this->hasMany(Matching::class);
      }
      
        public function likeUser()
