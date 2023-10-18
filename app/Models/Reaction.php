@@ -26,5 +26,7 @@ class Reaction extends Pivot
     {
         return $this->belongsTo('App\Models\User', 'like_id','id');
     }
+    
+    
 
 }
