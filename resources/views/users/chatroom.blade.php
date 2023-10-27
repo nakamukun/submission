@@ -1,40 +1,44 @@
+ 　<head>
+        <link rel="stylesheet" href="{{asset('css/chatroom.css')}}">
+    </head>
 <x-app-layout>
     <x-slot name="header">
-     
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-           チャットルーム
-        </h2>
+        <h1 class="header">チャットルーム</h1>
     </x-slot>
-    
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     
-                    <form method="post"id="chat_message"onsubmit="onsubmit_Form(); return false;">
-                    @csrf
-                        <input type="text" id="input_message" name="chat_message" autocomplete="off">
-                        <input type="hidden" name="chat_room_id" value="{{$chat_room->id}}">
-                        <button type="submit" class="text-white bg-blue-700 px-5 py-2">送信</button>
-                    </form>
-                    
-                   @foreach($chat_messages as $chat_message)
+                      @foreach($chat_messages as $chat_message)
                         <div>
                             <p>
-                                <!--<ul id="list_message"></ul>-->
-                                <ul>
-                                    {{ $chat_message->user->name}}
-                                    {{ $chat_message->message}}
-                                </ul>
+                               
+                                <div class="user">
+                                    <h1>{{ $chat_message->user->name}}</h1>
+                                    <p>{{ $chat_message->message}}</p>
+                                </div>
                             </P>
                         </div>
                     @endforeach
                      <ul id="list_message"></ul>
+                    
+                   <form method="post"id="chat_message"onsubmit="onsubmit_Form(); return false;">
+                    @csrf
+                        <input type="text" class="text" id="input_message" name="chat_message" autocomplete="off">
+                        <input type="hidden" name="chat_room_id" value="{{$chat_room->id}}">
+                        <button type="submit" class="text-white bg-blue-700 px-5 py-2">送信</button>
+                    </form>
+                        <a href="/chat" class="back">戻る</a>
+                    
+                 
                 </div>
             </div>
         </div>
     </div>
      
+       
+    
     
      <script>
         const elementInputNickname = document.getElementById( "input_nickname" );

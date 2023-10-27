@@ -19,9 +19,11 @@ class UserController extends Controller
                 
           
        
-          $college = $request->input('college',);
-          $factory = $request->input('factory');
-          $department = $request->input("department");
+        $college = $request->input('college',);
+        $factory = $request->input('factory');
+        $department = $request->input("department");
+        $sex = $request->input("sex");
+        $location = $request->input("location");
        
           $query = User::query();
          
@@ -35,13 +37,31 @@ class UserController extends Controller
             
         if ($factory) {
             
-          
             $query->where('factory', 'like', "%{$factory}%");
+            
         }
         
-         if ($department) {
+        if ($department) {
    
             $query->where('department', 'like', "%{$department}%");
+            
+        }
+        
+        if ($department) {
+   
+            $query->where('department', 'like', "%{$department}%");
+
+        } 
+        
+        if ($sex) {
+   
+            $query->where('sex', 'like', "%{$sex}%");
+
+        } 
+        
+        if ($location) {
+   
+            $query->where('location', 'like', "%{$location}%");
 
         } 
     
@@ -54,6 +74,8 @@ class UserController extends Controller
                 'college' => $college,
                 'factory' => $factory,
                 'department' =>$department,    
+                'sex' => $sex,
+                "location" => $location,
             ]);
             
            

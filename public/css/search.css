@@ -1,0 +1,69 @@
+.header{
+    color:#FF8856;
+    font-weight:bold;
+    font-size:25px;
+}
+
+.user {
+   text-align:center;
+}
+
+.Aperture {
+    font-weight:bold;
+}
+
+.college {
+    padding-top:10px;
+}
+
+.text h1 {
+    margin:0 auto;
+    padding-bottom:25px;
+    width:400px;
+}
+
+.location {
+    margin:0 auto;
+    width:400px;
+    margin-bottom:15px;
+}
+
+.btn {
+    color:white;
+}
+
+.reset {
+    padding:5px 40px;
+    background-color:#999999;
+    display:inline-block;
+    border-radius:15px;
+    opacity:0.8;
+}
+
+.search {
+    padding:5px 120px;
+    background-color:#FF6666;
+    display: inline-block;
+    border-radius:15px;
+    opacity:0.8;
+    margin-bottom:15px;
+}
+
+.reset:hover {
+    opacity:1;
+}
+
+.search:hover {
+    opacity:1;
+}
+
+.back {
+    color:#0000CD;
+}
+
+.aaa {
+    float:left;
+    color:red;
+}
+
+

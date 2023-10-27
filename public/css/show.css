@@ -1,0 +1,56 @@
+.header{
+    color:#FF8856;
+    font-weight:bold;
+    font-size:25px;
+}
+
+.image {
+    height:300px;
+    object-fit:cover;
+    margin:0 auto;
+}
+
+.basic {
+    text-align:center;
+    font-weight:bold;
+    padding-bottom:10px;
+}
+
+.user{
+    text-align:center;
+}
+.user p {
+    text-align:center;
+    margin-bottom:18px;
+    color:#FF6666;
+}
+
+.btn {
+    text-align: center;
+    background-color:#FF6666;
+    margin:0 400px;
+    padding:10px 0;
+    color:white;
+    border-radius:10px;
+    opacity:0.8;
+    box-shadow: 0 5px #993366;
+}
+
+.btn:hover {
+    opacity:1;
+}
+
+.btn:active {
+    box-shadow:none;
+    position:relative;
+    top:5px;
+}
+
+.good {
+    margin-left:5px;
+}
+
+.back {
+    text-align:center;
+    color:#0000FF;
+}

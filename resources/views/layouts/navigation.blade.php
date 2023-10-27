@@ -1,3 +1,7 @@
+<head>
+　  <link rel="stylesheet" href="{{asset('css/navigation.css')}}">
+    <script src="https://kit.fontawesome.com/8d2e60b33a.js" crossorigin="anonymous"></script>
+</head>
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,25 +15,21 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                <div class="hidden space-x-8  sm:-my-px sm:ml-10 sm:flex">
+                     <x-nav-link :href="route('users/index')" :active="request()->routeIs('index')" class="index">
+                        <span  class="fa fa-magnifying-glass"></span>{{ __('さがす') }}
                     </x-nav-link>
                     
-                     <x-nav-link :href="route('users/index')" :active="request()->routeIs('index')">
-                        {{ __('さがす') }}
-                    </x-nav-link>
-                    
-                     <x-nav-link :href="route('users/match')" :active="request()->routeIs('match')">
-                        {{ __('いいね') }}
+                    <x-nav-link :href="route('users/match')" :active="request()->routeIs('match')" class="match">
+                         <span  class="fa fa-thumbs-up"></span>{{ __('いいね') }}
                     </x-nav-link>
                 
-                     <x-nav-link :href="route('users/chat')" :active="request()->routeIs('chat')">
-                        {{ __('トーク') }}
+                    <x-nav-link :href="route('users/chat')" :active="request()->routeIs('chat')" class="chat">
+                        <span  class="fa fa-comments"></span>{{ __('トーク') }}
                     </x-nav-link>
                     
-                     <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('edit')">
-                        {{ __('マイページ') }}
+                     <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('edit')" class="edit">
+                         <span  class="fa fa-user"></span>{{ __('マイページ') }}
                     </x-nav-link>
                 </div>
             </div>

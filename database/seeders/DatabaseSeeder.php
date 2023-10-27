@@ -15,7 +15,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UserSeeder::class);
-        // $this->call(ReactionSeeder::class);
-        // $this->call(MatchingSeeder::class);
+        $this->call(ReactionSeeder::class);
+        $this->call(MatchingSeeder::class);
+        $this->call(Chat_roomSeeder::class);
+        $this->call(Chat_messageSeeder::class);
     }
 }

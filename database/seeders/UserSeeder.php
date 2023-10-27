@@ -18,9 +18,9 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-                'name' => 'かか',
+                'name' => '1',
                 'email' => 'a@ccc',
-                'image_url' =>' https://res.cloudinary.com/dkqyurf1r/image/upload/v1697613403/p2otaxqmeuw16eyoiyus.png',
+                'image_url' =>'https://res.cloudinary.com/dkqyurf1r/image/upload/v1697613403/p2otaxqmeuw16eyoiyus.png',
                 'age' => '21歳',
                 'sex' =>'女',
                 'bio' => '初めまして！!',
@@ -36,9 +36,9 @@ class UserSeeder extends Seeder
         
         ]);    
         DB::table('users')->insert([
-                'name' => 'そそ',
+                'name' => '2',
                 'email' => 'a@aaa',
-                'image_url' =>' https://res.cloudinary.com/dkqyurf1r/image/upload/v1697613403/p2otaxqmeuw16eyoiyus.png',
+                'image_url' =>'https://res.cloudinary.com/dkqyurf1r/image/upload/v1697970832/x3aq2sh2ontwmkobpb3m.png',
                 'age' => '18歳',
                 'sex' =>'男',
                 'bio' => 'よろしく！',
@@ -54,9 +54,9 @@ class UserSeeder extends Seeder
         
         ]);    
         DB::table('users')->insert([
-                'name' => 'ピピ',
+                'name' => '3',
                 'email' => 'a@aaa.com',
-                'image_url' =>'ダウンロード.jpg',
+                'image_url' =>'https://res.cloudinary.com/dkqyurf1r/image/upload/v1697970911/vm45neiywnaefjajg32i.jpg',
                 'age' => '18歳',
                 'sex' =>'女',
                 'bio' => 'よろしく！',
@@ -72,9 +72,9 @@ class UserSeeder extends Seeder
         
         ]);   
         DB::table('users')->insert([
-                'name' => 'ちち',
+                'name' => '4',
                 'email' => 'a@a.com',
-                'image_url' =>'ダウンロード.jpg',
+                'image_url' =>'https://res.cloudinary.com/dkqyurf1r/image/upload/v1697970937/upbjxvyqko8buhbolmvj.jpg',
                 'age' => '18歳',
                 'sex' =>'男',
                 'bio' => 'よろしく！',
@@ -88,10 +88,96 @@ class UserSeeder extends Seeder
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
         
-        ]);    
+        ]);   
+        DB::table('users')->insert([
+                'name' => '5',
+                'email' => 'a@aa.com',
+                'image_url' =>'https://res.cloudinary.com/dkqyurf1r/image/upload/v1697970964/nlbetyl7ihrlihz5dplm.jpg',
+                'age' => '20歳',
+                'sex' =>'女',
+                'bio' => 'お願いします！',
+                'hobby' =>'ドライブ',
+                'height' => '160センチ',
+                'location' => '東京都',
+                'college' => '専修大学',
+                'factory' => '経営学部',
+                'department' =>'経営学科',
+                'password' => Hash::make('password'),
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+        ]);
         
+        DB::table('users')->insert([
+                'name' => '6',
+                'email' => 'a@aaaaaa',
+                'image_url' =>'https://res.cloudinary.com/dkqyurf1r/image/upload/v1697970989/vyaowkjpwto0vvll69se.jpg',
+                'age' => '18歳',
+                'sex' =>'女',
+                'bio' => 'よろしく！',
+                'hobby' =>'バドミントン',
+                'height' => '153センチ',
+                'location' => '神奈川県',
+                'college' => '明治大学',
+                'factory' => '経済学部',
+                'department' =>'経済学科',
+                'password' => Hash::make('password'),
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+        ]);
         
-            
+        DB::table('users')->insert([
+                'name' => '7',
+                'email' => 'a@bb',
+                'image_url' =>'https://res.cloudinary.com/dkqyurf1r/image/upload/v1697971043/eitsuyu3d4vztgwvxzfe.png',
+                'age' => '18歳',
+                'sex' =>'男',
+                'bio' => 'よろしく！',
+                'hobby' =>'野球',
+                'height' => '183センチ',
+                'location' => '東京都',
+                'college' => '大正大学',
+                'factory' => '文学部',
+                'department' =>'文学科',
+                'password' => Hash::make('password'),
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+        ]);
+           
+        DB::table('users')->insert([
+                'name' => '8',
+                'email' => 'a@cccc.com',
+                'image_url' =>'https://res.cloudinary.com/dkqyurf1r/image/upload/v1697971096/epsgksirhxcdhawiwliz.jpg',
+                'age' => '18歳',
+                'sex' =>'女',
+                'bio' => 'よろしく！',
+                'hobby' =>'バレー',
+                'height' => '155センチ',
+                'location' => '神奈川県',
+                'college' => '専修大学',
+                'factory' => '経済学部',
+                'department' =>'経済学科',
+                'password' => Hash::make('password'),
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+        ]);
+        
+        DB::table('users')->insert([
+                'name' => '9',
+                'email' => 'a@aaaaaa.com',
+                'image_url' =>'https://res.cloudinary.com/dkqyurf1r/image/upload/v1697971154/zktss32ionrlaxc9maeq.webp',
+                'age' => '18歳',
+                'sex' =>'男',
+                'bio' => 'よろしくお願いします！',
+                'hobby' =>'手芸部',
+                'height' => '170センチ',
+                'location' => '神奈川県',
+                'college' => '専修大学',
+                'factory' => '経済学部',
+                'department' =>'経済学科',
+                'password' => Hash::make('password'),
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+        ]);
         
     
     }

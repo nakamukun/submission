@@ -7,8 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use DateTime;
 
-
-class MatchingSeeder extends Seeder
+class Chat_roomSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,18 +16,14 @@ class MatchingSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('matchings')->insert([
-            'match1_id' => 1,
-            'match2_id' => 2,
+         DB::table('chat_rooms')->insert([
+            'matching_id' => 1,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
             ]);
             
-        DB::table('matchings')->insert([
-            'match1_id' => 1,
-            'match2_id' => 3,
+        DB::table('chat_rooms')->insert([
+            'matching_id' => 2,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
             ]);    
     }
 }

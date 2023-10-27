@@ -1,7 +1,10 @@
+　 <head>
+        <link rel="stylesheet" href="{{asset('css/show.css')}}">
+    </head>
  <x-app-layout>
     <x-slot name="header">
      
-      <h1>詳細画面</h1>
+      <h1 class="header">詳細画面</h1>
    </x-slot>
    
      <div class="py-12">
@@ -10,34 +13,39 @@
                 <div class="p-6 text-gray-900">
                  
     <body>
-     
-       @if($user->image_url)
-            <div>
-                <img src="{{ $user->image_url }}" alt="画像が読み込めません。"style="height:300px ;width:300px ;object-fit: cover;"/>
+        @if($user->image_url)
+            <div class = "image">
+                <img src="{{ $user->image_url }}" alt="画像が読み込めません。"class="image"/>
             </div>
         @endif
-
-           <div>
-            <p>名前:{{$user->name}}</p>
-            <p>年齢:{{$user->age}}</p>
-            <p>居住地:{{$user->location}}</p>
-            <p>身長:{{$user->height}}</p>
-            <p>自己紹介文:{{$user->bio}}</p>
-            <p>趣味:{{$user->hobby}}</p>
-            <p></p>
-         
-         </div>
-         <form action="{{route('reactions/store')}}" method="POST">
-         @csrf
-         <input type="hidden" name="liked_id" value="{{ $user->id}}">
-         <input type="hidden" name="status" value="1">
-         <button class="yes" type="submit">
-            　いいね
-         </button>
-         </form>
+        
+        <div class="basic">基本情報</div>
+        
+        <div class="user">
+            名前<p>{{$user->name}}</p>
+            年齢<p>{{$user->age}}</p>
+            居住地<p>{{$user->location}}</p>
+            身長<p>{{$user->height}}</p>
+            自己紹介文<p>{{$user->bio}}</p>
+            趣味<p>{{$user->hobby}}</p>
+        </div>
+        
+        <form action="{{route('reactions/store')}}" method="POST">
+        @csrf
+            <input type="hidden" name="liked_id" value="{{ $user->id}}">
+            <input type="hidden" name="status" value="1">
+            <div class="btn">
+                <button class="yes" type="submit">
+                        <span class="fa fa-heart" class="good"></span>いいね!
+                </button>
+                
+            </div>
+        </form>
          
       
-          <a href='/'>戻る</a>  
+        <p class="back">
+            <a href='/' >戻る</a>
+        </p>
      
 
       

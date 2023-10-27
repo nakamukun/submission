@@ -81,5 +81,4 @@ class User extends Authenticatable
          return $this->belongsToMany('App\Models\User', 'reaction',  'liked_id','like_id');
         }
 
-     
 }
