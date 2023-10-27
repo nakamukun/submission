@@ -31,7 +31,22 @@ class ReactionSeeder extends Seeder
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
             ]);   
-            
-       
+          
+        DB::table('reactions')->insert([
+            'liked_id' => 1,
+            'like_id' => 3,
+            'status' => 2,
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+            ]);
+        
+        DB::table('reactions')->insert([
+            'liked_id' => 3,
+            'like_id' => 1,
+            'status' => 2,
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+            ]);      
+        
     }
 }

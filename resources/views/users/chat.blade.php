@@ -1,34 +1,35 @@
- <x-app-layout>
-    <x-slot name="header">
-     
-      <h1>トーク</h1>
-   </x-slot>
-   
-         @foreach($matchings as $matching)
-          <p>
-            <a href='/chatroom/{{$matching->id}}' class="block">
-            <!--<a href='/users/chatroom' class="block">-->
-                <div class="container" style="border:1px solid black;margin-bottom:0.2px;">
-                    @if ($matching->match1_id == Auth::id())
-                        <p>マッチング相手の名前: {{ $matching->match2->name }}</p>
-                            <div>
-                                <img src="{{ $matching->match2->image_url }}" alt="画像が読み込めません。"  style="height:50px ;width:50px ;object-fit: cover;"/>
-                            </div>
-                            <div style="font-size:15px;">
-                                {{$matching->match2->name}}
-                            </div>
-                    @else
-                        <p>マッチング相手の名前: {{ $matching->match1->name }}</p>
-                         <div>
-                            <img src="{{ $matching->match1->image_url }}" alt="画像が読み込めません。"  style="height:50px ;width:50px ;object-fit: cover;"/>
+ 　 <head>
+        <link rel="stylesheet" href="{{asset('css/chat.css')}}">
+    </head>
+    <x-app-layout>
+        <x-slot name="header">
+            <h1 class="header">トーク</h1>
+        </x-slot>
+            <div class="py-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 text-gray-900" >
+                            @foreach($matchings as $matching)
+                                <div class="inf">
+                                   
+                                    @if ($matching->match1_id == Auth::id())
+                                        <img src="{{ $matching->match2->image_url }}" alt="画像が読み込めません。" class="image"/>
+                                            <div class="user">
+                                                <p>{{$matching->match2->name}}</p>
+                                                <p>{{$matching->match2->location}}</p>
+                                            </div>
+                                    @else
+                                        <img src="{{ $matching->match1->image_url }}" alt="画像が読み込めません。" class="image"/>
+                                            <div class="user">
+                                                <p>{{$matching->match1->name}}</p>
+                                                <p>{{$matching->match1->location}}</p>
+                                            </div>
+                                    @endif
+                                        <h3 class="btn"><a href='/chatroom/{{$matching->id}}'>チャットを始めよう！</a></h3>
+                                </div>
+                            @endforeach
                         </div>
-                        <div style="font-size:15px;">
-                            {{$matching->match1->name}}
-                        </div>
-                    @endif
+                    </div>
                 </div>
-            </a>
-          </p>
-         @endforeach
-   
-  </x-app-layout>
+            </div>      
+    </x-app-layout>

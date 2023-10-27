@@ -1,7 +1,10 @@
+ <head>
+        <link rel="stylesheet" href="{{asset('css/edit.css')}}">
+    </head>
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('マイページ') }}
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight ">
+            <p class="header">{{ __('マイページ') }}</p>
         </h2>
     </x-slot>
 

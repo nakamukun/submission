@@ -1,0 +1,51 @@
+.body {
+    height:800px;
+    background-color:#f7f7f7; 
+}
+
+.search {
+    width:400px;
+    margin:10px 0 30px 60px;
+    color:#FF367F;
+    background-color:#FFCCFF;
+    text-align:center;
+    border-radius:10px;
+}
+
+.header{
+    color:#FF8856;
+    font-weight:bold;
+    font-size:25px;
+}
+
+.inf {
+    width:25%;
+    float:left;
+}
+
+.image {
+    height:300px;
+    width:300px;
+    object-fit:cover;
+    border-radius:50px;
+}
+
+.user {
+    font-weight:bold;
+    color:#FF8856;
+}
+
+.user h1 {
+    font-size:20px;
+    padding:2px 0 0 20px;
+    float:left;
+    margin-bottom:15px;
+}
+
+.user p {
+    font-size:13px;
+    padding:8px 0 0 10px;
+    float:left;
+    }
+
+  
