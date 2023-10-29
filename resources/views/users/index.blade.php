@@ -5,7 +5,6 @@
         <x-slot name="header">
             <h1 class="header">さがす</h1>
         </x-slot>
-        
         <body>
             <div class="body">
                 <a href="/search" class="search">

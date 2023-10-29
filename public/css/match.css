@@ -46,3 +46,13 @@
     padding:8px 0 0 10px;
     float: left;
 }
+
+@media(max-width:1000px){
+    .body{
+        height:1100px
+    }
+    
+    .inf {
+        width:50%;
+    }
+}
