@@ -1,8 +1,7 @@
-<head>
-　  <link rel="stylesheet" href="{{asset('css/navigation.css')}}">
-    <script src="https://kit.fontawesome.com/8d2e60b33a.js" crossorigin="anonymous"></script>
-</head>
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    
+    <link rel="stylesheet" href="{{asset('css/navigation.css')}}">
+    
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
