@@ -1,4 +1,4 @@
- 　 <head>
+    <head>
         <link rel="stylesheet" href="{{asset('css/chatroom.css')}}">
     </head>
     <x-app-layout>
@@ -34,24 +34,25 @@
                 </div>
             </div>
         </div>
-         
-           
-        
-        
+     
         <script>
             const elementInputNickname = document.getElementById( "input_nickname" );
             const elementInputMessage = document.getElementById( "input_message" );
             
             var chatRoomId = <?php echo $chat_room->id; ?>;
                         console.log(elementInputMessage );
+            
             function onsubmit_Form()
             {
                 let strMessage = elementInputMessage.value;
+    
                 if( !strMessage )
                 {
                     return;
                 }
+    
                 params = {'message': strMessage };
+    
                 axios
                     .post( `/chat_messages/${chatRoomId}`, params )
                     .then( response => {
@@ -60,8 +61,13 @@
                     .catch(error => {
                         console.log(error.response)
                     } );
+    
                 elementInputMessage.value = "";
             }
+            
+            
+               
+         
             window.addEventListener( "DOMContentLoaded", function()
             
             {
@@ -79,7 +85,7 @@
                     elementMessage.textContent = strMessage;
                     elementLi.append( elementUsername );
                     elementLi.append( elementMessage );
-                    elementListMessage.prepend( elementLi );  /
+                    elementListMessage.prepend( elementLi );  
                 });
             });
             

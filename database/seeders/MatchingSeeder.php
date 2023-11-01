@@ -21,14 +21,12 @@ class MatchingSeeder extends Seeder
             'match1_id' => 1,
             'match2_id' => 2,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
             ]);
             
         DB::table('matchings')->insert([
             'match1_id' => 1,
             'match2_id' => 3,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
             ]);    
     }
 }

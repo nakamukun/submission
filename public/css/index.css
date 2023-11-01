@@ -1,11 +1,13 @@
 .body {
     height:800px;
-    background-color:#f7f7f7; 
+    background: linear-gradient(-45deg, rgba(246, 255, 0, .8), rgba(255, 0, 161, .8));
+    background-image:url(https://res.cloudinary.com/dkqyurf1r/image/upload/v1698691219/mbswgrzl7ayfldgkmngz.jpg);
+    background-size: cover;
 }
 
 .search {
     width:400px;
-    margin:10px 0 30px 60px;
+    margin:0 0 30px 60px;
     color:#FF367F;
     background-color:#FFCCFF;
     text-align:center;
