@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('match1_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('match2_id')->constrained('users')->cascadeOnDelete();
-            $table->timestamps();
-           
+            $table->datetime('created_at');
         });
     }
 

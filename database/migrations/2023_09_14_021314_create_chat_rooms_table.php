@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('chat_rooms', function (Blueprint $table) {
             $table->id();
-             $table->foreignId('matching_id')->constrained();
+            $table->foreignId('matching_id')->constrained();
             $table->datetime('created_at');
         });
     }

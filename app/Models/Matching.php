@@ -13,6 +13,10 @@ class Matching extends Model
         'match2_id',
         'match1_id',
         ];
+    
+    public $timestamps = true;
+    
+    const UPDATED_AT = null;
        
     protected $table = 'matchings';
     

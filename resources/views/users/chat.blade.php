@@ -4,12 +4,22 @@
     <x-app-layout>
         <x-slot name="header">
             <h1 class="header">トーク</h1>
+             <ul class="sakura" >
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
         </x-slot>
         <body>
-            <div class="py-12">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-6 text-gray-900" >
+            <div class="body">
+                <div class="py-12">
+                    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                             @foreach($matchings as $matching)
                                 <div class="inf">
                                    
@@ -29,9 +39,8 @@
                                         <h3 class="btn"><a href='/chatroom/{{$matching->id}}'>チャットを始めよう！</a></h3>
                                 </div>
                             @endforeach
-                        </div>
                     </div>
-                </div>
-            </div>      
+                </div>      
+            </div>    
         </body>    
     </x-app-layout>
