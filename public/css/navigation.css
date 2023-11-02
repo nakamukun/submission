@@ -13,3 +13,23 @@
 .edit:hover {
     color:#FFABCE;
 }
+
+@media(max-width:670px){
+    .index {
+       font-size:14px;
+       margin-right:20px; 
+    }
+    
+    .match {
+        margin-right:20px; 
+    }
+    
+    .chat {
+        margin-right:20px; 
+    }
+    
+    .edit {
+        margin-right:120px;
+    }
+    
+}
