@@ -6,7 +6,7 @@
 
 .body {
     height:900px;
-    background-color:#D9E5FF; 
+    /*background-image: linear-gradient(159deg, rgba(243, 170, 196, 1), rgba(246, 190, 232, 1) 33%, rgba(255, 247, 216, 1) 76%);*/
 }
 
 .matching {
@@ -54,5 +54,27 @@
     
     .inf {
         width:50%;
+    }
+    
+    .image {
+        margin-left:10px;
+    }
+}
+
+@media(max-width:670px){
+    .body {
+        height:1100px;
+    }
+    
+   .image {
+    height:200px;
+    width:200px;
+    object-fit:cover;
+    border-radius:50px;
+    margin-left:25px;
+    }
+    
+     .user h1{
+        padding-left:64px;
     }
 }
