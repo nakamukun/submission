@@ -14,9 +14,9 @@
     color:#FFABCE;
 }
 
-@media(max-width:670px){
+@media(max-width:400px){
     .index {
-       font-size:14px;
+       font-size:16px;
        margin-right:20px; 
     }
     
@@ -29,7 +29,9 @@
     }
     
     .edit {
-        margin-right:120px;
+        margin-right:20px;
     }
+
+   
     
 }

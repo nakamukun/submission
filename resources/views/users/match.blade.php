@@ -1,9 +1,20 @@
-    <head>
+<head>
         <link rel="stylesheet" href="{{asset('css/match.css')}}">
     </head>
     <x-app-layout>
         <x-slot name="header">
             <h1 class="header">いいね</h1>
+            <ul class="sakura" >
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
         </x-slot>
         <body> 
             <div class="body">
@@ -25,5 +36,3 @@
             </div>
         </body> 
     </x-app-layout>
-  
-  

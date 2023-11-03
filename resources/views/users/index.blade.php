@@ -4,6 +4,17 @@
     <x-app-layout>
         <x-slot name="header">
             <h1 class="header">さがす</h1>
+            <ul class="sakura" >
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
         </x-slot>
         <body>
             <div class="body">

@@ -52,12 +52,6 @@
     top:5px;
 }
 
-@media(max-width:1000px){
-    .btn {
-        margin:5px 100px;
-    }
-}
-    
 .sakura li{
   position: absolute;
   list-style: none;
@@ -174,18 +168,15 @@
     }
 }
 
-@media(max-width:670px){
+@media(max-width:400px){
     .btn {
-      margin:5px 50px;
+      margin:5px 18px;
     }
     
     .image {
-    height:200px;
-    width:200px;
+    height:150px;
+    width:150px;
     object-fit:cover;
     border-radius:50px;
 }
 }
-
-
- 

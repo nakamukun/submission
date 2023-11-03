@@ -9,6 +9,19 @@
     </x-slot>
 
     <div class="home py-12">
+        
+          <ul class="sakura" >
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+        
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="max-w-xl">
                 @include('profile.partials.update-profile-information-form')

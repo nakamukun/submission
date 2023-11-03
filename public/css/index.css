@@ -168,29 +168,29 @@
     }
     
     .image {
-        margin-left:30px;
+        margin-left:10px;
     }
     
     .user h1 {
-      margin-left:130px;
+      margin-left:88px;
     }
 }    
 
-@media(max-width:670px){
+@media(max-width:400px){
     .body {
-        height:1100px;
+        height:700px;
     }
     
    .image {
-    height:200px;
-    width:200px;
+    height:150px;
+    width:150px;
     object-fit:cover;
     border-radius:50px;
-    margin-left:15px;
+    margin-right:50px;
 }
 
     .user h1{
-        padding-left:64px;
+        margin-left:20px;
     }
     
     .search {
