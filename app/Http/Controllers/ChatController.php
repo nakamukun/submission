@@ -13,16 +13,12 @@ class ChatController extends Controller
 {
     public function chat(User $user,Chat_room $chat_room)
     {
-    $userId = \Auth::id();
-    //  $likedUserIds = reaction::where('liked_id', Auth::user()->id)->where('status' , 2)->pluck('like_id');
-    // //  dd($likedUserIds);
-    //  $matchdUsers = reaction::where('like_id', \Auth::user()->id)->whereIn('liked_id', $likedUserIds)->where('status',2)->get();
-     
-    $matchings = Matching::where('match1_id', $userId)
-    ->orWhere('match2_id', $userId)
-    ->get();
-     
-    //  dd($matchdUsers);
+        $userId = \Auth::id();
+         
+        $matchings = Matching::where('match1_id', $userId)
+        ->orWhere('match2_id', $userId)
+        ->get();
+      
         return view('users/chat')->with([
           'matchings' => $matchings,
             ]);
