@@ -20,13 +20,13 @@ class ReactionController extends Controller
         //AさんがB(自分)さんにいいねを送っている時
         {   
             $item = DB::table('reactions')->where('like_id',$request->input('liked_id'))->where('liked_id', \Auth::user()->id)->update([
-                'status' => "2"
+                'status' => 2,
                 ]);
                 
             reaction::create([
                 'like_id' => \Auth::user()->id,
                 'liked_id' => $request->input('liked_id'),
-                'status' => "2",
+                'status' => 2,
             ]);
             
             
@@ -49,7 +49,7 @@ class ReactionController extends Controller
             reaction::create([
                 'like_id' => \Auth::user()->id,
                 'liked_id' => $request->input('liked_id'),
-                'status' => "1",
+                'status' => 1,
             ]);
         }
     

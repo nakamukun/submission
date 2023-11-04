@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('like_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('liked_id')->constrained('users')->cascadeOnDelete();
-            $table->boolean('status');
+            $table->string('status');
             $table->timestamps();
         });
     }
