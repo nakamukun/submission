@@ -14,25 +14,10 @@ class MatchController extends Controller
 {
     public function match() 
     {
-//   if(DB::table('reactions')->where('liked_id',\Auth::user()->id)->where('like_id','status' , true)->doesntExist());
-    // {
-    
-
-      $likedUserIds = reaction::where('liked_id', \Auth::user()->id)->where('status' , true)->get();
-    // }
-    // $likedUsers = Reaction::where('to_user_id', \Auth::user()->id)->where('status' , true)->pluck('from_user_id');
-    // $likedUsersInfo = $likedUsers->user()->get();
-    
-    //  $matchdUsers = reaction::where('fwrom_user_id', \Auth::user()->id)->whereIn('to_user_id', $likedUserIds)->where('status',true)->get();
-    //  $followusers = reaction::where('to_user_id', \Auth::user()->id)->whereIn('likedUsers')->get();
-    
-    //  dd($likedUserIds);
+        $likedUserIds = reaction::where('liked_id', \Auth::user()->id)->where('status' , true)->get();
         return view('users/match')->with([
             "likedUserIds" => $likedUserIds,
-            //  'matchdUsers' => $matchdUsers,
-            // 'user' => $user,
-            // "followusers" =>  $followusers,
-            ]);
+        ]);
         
     }
     
