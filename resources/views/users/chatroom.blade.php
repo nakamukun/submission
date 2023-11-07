@@ -73,7 +73,7 @@
             {
                 const elementListMessage = document.getElementById( "list_message" );
                 
-                window.Echo.channel('chatroom').listen( 'MessageSent', (e) =>
+                window.Echo.private('chatroom').listen( 'MessageSent', (e) =>
                 {
                     console.log(e);
                     let strUsername = e.message.username;
