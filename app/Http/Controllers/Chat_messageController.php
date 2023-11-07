@@ -47,7 +47,7 @@ class Chat_messageController extends Controller
         // return redirect('/chatroom/'. $chat_message->chat_room->matching->id)->with([
         //     "chat_room_id" => $chat_message->chat_room_id,
         // ]);
-        return $reques;
+        return $request;
         
         //  chat_message::create([
         //       'message' => strMessage,
