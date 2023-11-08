@@ -10,8 +10,6 @@
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         
-                         <ul id="list_message"></ul>
-                        
                         @foreach($chat_messages as $chat_message)
                             <div>
                                 <p>
@@ -24,6 +22,7 @@
                             </div>
                         @endforeach
                        
+                        <ul id="list_message"></ul>
                         
                        <form method="post"id="chat_message"onsubmit="onsubmit_Form(); return false;">
                         @csrf
@@ -67,13 +66,11 @@
                 elementInputMessage.value = "";
             }
             
-            
-               
-         
             window.addEventListener( "DOMContentLoaded", function()
             
             {
                 const elementListMessage = document.getElementById( "list_message" );
+                 
                 
                 window.Echo.private('chatroom').listen( 'MessageSent', (e) =>
                 {
@@ -85,9 +82,9 @@
                     let elementMessage = document.createElement( "div" );
                     elementUsername.textContent = strUsername;
                     elementMessage.textContent = strMessage;
-                    elementLi.append( elementUsername );
-                    elementLi.append( elementMessage );
-                    elementListMessage.prepend( elementLi );  
+                    elementLi.appendChild( elementUsername );
+                    elementLi.appendChild( elementMessage );
+                    elementListMessage.prepend( elementLi ); 
                 });
             });
             
