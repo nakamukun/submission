@@ -10,6 +10,8 @@
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         
+                         <ul id="list_message"></ul>
+                        
                         @foreach($chat_messages as $chat_message)
                             <div>
                                 <p>
@@ -21,7 +23,7 @@
                                 </P>
                             </div>
                         @endforeach
-                        <ul id="list_message"></ul>
+                       
                         
                        <form method="post"id="chat_message"onsubmit="onsubmit_Form(); return false;">
                         @csrf
@@ -36,7 +38,7 @@
         </div>
      
         <script>
-            const elementInputNickname = document.getElementById( "input_nickname" );
+           {{-- const elementInputNickname = document.getElementById( "input_nickname" );--}}
             const elementInputMessage = document.getElementById( "input_message" );
             
             var chatRoomId = <?php echo $chat_room->id; ?>;
