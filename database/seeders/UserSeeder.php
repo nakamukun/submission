@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
                 'name' => '2',
                 'email' => 'a@aaa',
-                'image_url' =>'https://res.cloudinary.com/dkqyurf1r/image/upload/v1697970832/x3aq2sh2ontwmkobpb3m.png',
+                'image_url' =>'https://res.cloudinary.com/dkqyurf1r/image/upload/v1699495354/b8833virjfpb64nba7ra.jpg',
                 'age' => '18歳',
                 'sex' =>'男',
                 'bio' => 'よろしく！',
