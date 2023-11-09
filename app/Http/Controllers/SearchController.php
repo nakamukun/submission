@@ -10,6 +10,5 @@ class SearchController extends Controller
     public function search()
     {
             return view('users/search');
-        
     }
 }
