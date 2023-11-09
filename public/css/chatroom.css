@@ -4,7 +4,7 @@
     font-size:25px;
 }
 
-.chat h1 {
+.message h1{
     font-weight: bold;
 }
 
@@ -12,8 +12,13 @@
      color:#0000FF;
 }
 
-chatroom
+.over {
+    background-image: url(https://res.cloudinary.com/dkqyurf1r/image/upload/v1699491954/lcogwwtwheyd3uvglbwz.jpg);
+    height:1000px;
+   object-fit: cover;
+}
+
 .home {
-    background-image: linear-gradient(90deg, rgba(168, 202, 240, 1), rgba(233, 240, 250, 1));
+      background-color:rgba(210, 153, 194, 0.51);
 }
 

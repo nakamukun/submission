@@ -17,7 +17,6 @@ class ReactionController extends Controller
     public function store(Request $request , Reaction $reaction)
     {
         if (DB::table('reactions')->where('like_id',$request->input('liked_id'))->where('liked_id', \Auth::user()->id)->exists())
-        //AさんがB(自分)さんにいいねを送っている時
         {   
             $item = DB::table('reactions')->where('like_id',$request->input('liked_id'))->where('liked_id', \Auth::user()->id)->update([
                 'status' => 2,
@@ -44,7 +43,6 @@ class ReactionController extends Controller
             
             
         } elseif (DB::table('reactions')->where('like_id', Auth::user()->id)->where('liked_id',$request->input('liked_id'))->doesntExist())
-        //自分(Aさん)がBさんにいいねを送ってない時
         {
             reaction::create([
                 'like_id' => \Auth::user()->id,

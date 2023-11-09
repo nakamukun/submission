@@ -3,19 +3,20 @@
     </head>
     <x-app-layout>
         <x-slot name="header">
-            <h1 class="header">トーク</h1>
-             <ul class="sakura" >
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
+                <h1 class="header">トーク</h1>
+                <ul class="sakura" >
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
         </x-slot>
+       
         <body>
             <div class="body">
                 <div class="py-12">
